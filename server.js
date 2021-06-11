@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
+let port = process.env.port || 4000
 
-app.get('/api', (req, res) => res.send('Its working!'));
-app.listen(process.env.port || 4000, function(){
+app.get('/', (req, res) => {
+  res.send('Its working!')
+});
+
+app.listen(port, () => {
    console.log('now listening for requests');
 });
